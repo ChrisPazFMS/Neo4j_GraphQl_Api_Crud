@@ -1,0 +1,18 @@
+type Book {
+    id: ID!
+    title: String!
+    author: String!
+    publicationYear: Int!
+    genre: String!
+}
+
+type Query {
+    books: [Book]
+    bookById(id: ID!): Book
+    bookByTitle(title: String!): [Book]
+}
+
+type Mutation {
+    addBook(title: String!, author: String!, publicationYear: Int!, genre: String!): Book
+    deleteBookById(id: ID!): Boolean
+}
