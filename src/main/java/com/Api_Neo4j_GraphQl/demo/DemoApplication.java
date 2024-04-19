@@ -13,7 +13,7 @@ public class DemoApplication {
 		app.setLogStartupInfo(true);
 		app.run(args);
 
-		System.out.println("Application démarrée avec succès.");
+		System.out.println("Application started successfully.");
 	}
 
 }

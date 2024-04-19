@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GraphqlConfiguration {
 
+    // Configuring GraphQL Schema
     @Bean
     public GraphQLSchema graphQLSchema(BookQueryResolver bookQueryResolver, BookMutationResolver bookMutationResolver) {
         return SchemaParser.newParser()

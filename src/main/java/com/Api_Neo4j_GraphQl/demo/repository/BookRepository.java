@@ -9,14 +9,14 @@ import java.util.Optional;
 
 public interface BookRepository extends Neo4jRepository<Book, Long> {
 
-    // Méthode pour trouver un livre par son titre de Spring Data JPA
+    // Method to find a book by its title from Spring Data JPA
     List<Book> findByTitle(String title);
 
-    // Méthode pour trouver un livre par son titre en utilisant une requête Cypher
+    // Method to find a book by its title using a Cypher query
     // @Query("MATCH (b:Book {title: $title}) RETURN b")
     // Optional<Book> findBookByTitle(String title);
 
-    // Méthode pour récupérer tous les livres en utilisant une requête Cypher
+    // Method to retrieve all books using a Cypher query
     // @Query("MATCH (b:Book) RETURN b")
     // List<Book> findAllBooks();
 

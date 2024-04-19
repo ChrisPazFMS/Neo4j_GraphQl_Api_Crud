@@ -1,17 +1,27 @@
+# Type Book: Represents a book in the database.
+# Each book has a unique identifier (id), a title (title), an author (author),
+# a year of publication (publicationYear), and a genre (genre).
 type Book {
-    id: ID!
-    title: String!
-    author: String!
-    publicationYear: Int!
-    genre: String!
+    id: ID! # Unique book identifier.
+    title: String! # Title of the book.
+    author: String! # Name of the author of the book.
+    publicationYear: Int! # Year the book was published.
+    genre: String! # Genre of the book.
 }
 
+# Type Query: Defines the queries available to retrieve data.
+# -books: Retrieves the list of all books.
+# -bookById: Retrieves a book by its identifier.
+# -bookByTitle: Retrieves one or more books by their title.
 type Query {
     books: [Book]
     bookById(id: ID!): Book
     bookByTitle(title: String!): [Book]
 }
 
+# Type Mutation : Définit les mutations disponibles pour modifier des données.
+# - addBook : Ajoute un nouveau livre avec un titre, un auteur, une année de publication, et un genre.
+# - deleteBookById : Supprime un livre par son identifiant.
 type Mutation {
     addBook(title: String!, author: String!, publicationYear: Int!, genre: String!): Book
     deleteBookById(id: ID!): Boolean

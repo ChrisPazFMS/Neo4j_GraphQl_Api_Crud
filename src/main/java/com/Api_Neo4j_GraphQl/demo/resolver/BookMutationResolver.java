@@ -14,7 +14,7 @@ public class BookMutationResolver implements GraphQLMutationResolver {
         this.bookService = bookService;
     }
 
-    // Méthode pour ajouter un livre
+    // Method to add a book
     public Book addBook(String title, String author, int publicationYear, String genre) {
         Book newBook = new Book();
         newBook.setTitle(title);
@@ -24,9 +24,9 @@ public class BookMutationResolver implements GraphQLMutationResolver {
         return bookService.save(newBook);
     }
 
-    // Méthode pour supprimer un livre par son ID
+    // Method to delete a book by its ID
     public Boolean deleteBookById(Long id) {
         bookService.deleteBookById(id);
-        return true; // Retourne true si réussi
+        return true; // Return true if successful
     }
 }

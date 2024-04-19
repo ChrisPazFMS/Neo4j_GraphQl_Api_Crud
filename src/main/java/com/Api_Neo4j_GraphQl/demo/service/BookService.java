@@ -4,7 +4,6 @@ import com.Api_Neo4j_GraphQl.demo.Entities.Book;
 import com.Api_Neo4j_GraphQl.demo.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -19,37 +18,37 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    // Méthode pour trouver un livre par son titre avec Spring Data JPA
+    // Method to find a book by its title with Spring Data JPA
     public List<Book> findBookByTitle(String title) {
         return bookRepository.findByTitle(title);
     }
 
-    // Méthode pour trouver un livre par son titre en utilisant une requête Cypher
+    // Method to find a book by its title using a Cypher query
     // public List<Book> findBookByTitle(String title) {
     // return bookRepository.findBookByTitle(title);
     // }
 
-    // Méthode pour récupérer tous les livres en utilisant une requête Cypher
+    // Method to retrieve all books using a Cypher query
     // public List<Book> findAllBooks() {
     // return bookRepository.findAllBooks();
     // }
 
-    // Méthode pour récupérer tous les livres avec Spring Data JPA
+    // Method to retrieve all books with Spring Data JPA
     public List<Book> findAll() {
         return bookRepository.findAll();
     }
 
-    // Méthode pour récupérer un livre par son ID avec Spring Data JPA
+    // Method to retrieve a book by its ID with Spring Data JPA
     public Optional<Book> findById(Long id) {
         return bookRepository.findById(id);
     }
 
-    // Méthode pour sauvegarder un livre
+    // Method to save a book
     public Book save(Book book) {
         return bookRepository.save(book);
     }
 
-    // Méthode pour supprimer un livre
+    // Method to delete a book
     public void deleteBookById(Long id) {
         bookRepository.deleteById(id);
     }

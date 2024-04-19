@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class BookQueryResolver implements GraphQLQueryResolver {
@@ -21,13 +20,14 @@ public class BookQueryResolver implements GraphQLQueryResolver {
         logger.info("BookQueryResolver initialized");
     }
 
-    // Méthode pour trouver un livre par son titre en utilisant une requête Cypher
+    // Method to find a book by its title using a Cypher query
     public List<Book> bookByTitle(String title) {
         return bookService.findBookByTitle(title);
     }
 
+    // Method to retrieve all books using a Cypher query
     public List<Book> books() {
-        logger.info("Appel réussi à la méthode books()");
+        logger.info("Successful call to books() method");
         List<Book> books = bookService.findAll();
         if (!books.isEmpty()) {
             logger.info("Found {} books", books.size());
@@ -37,6 +37,7 @@ public class BookQueryResolver implements GraphQLQueryResolver {
         return books;
     }
 
+    // Method to find a book by its ID
     public Book bookById(Long id) {
         logger.info("Fetching book with ID: {}", id);
         Book book = bookService.findById(id).orElse(null);
